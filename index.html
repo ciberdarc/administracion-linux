@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Curso de Administración de Servidores Linux</title>
+    <title>Curso de Administración de Servidores Linux de Platzi</title>
 </head>
 <body>
     <!--  -->
@@ -23,6 +23,16 @@
         <li><strong>sudo vim /etc/ssh/sshd_config</strong>: En este archivo de configuración se debe editar la opción para que la única forma de conectarse al servidor sea por medio de ssh y no por medio de username y password.</li>
         <p>La opción a editar es: <strong>PasswordAuthentication [no]</strong>, colocar no; para evitar la autenticación por medio de username y password</p>
         <li><strong>sudo /etc/init.d/ssh restart</strong>: Reinicia el servicio ssh; y aplica los cambios</li>
+    </ul>
+
+    <p>A continuación se muestran los puertos más básicos (que debemos conocer) en Linux.</p>
+    <!-- Lista desordenada -->
+    <ul>
+        <li><strong>FTP (File Transfer Protocol):</strong> Puerto 21</li>
+        <li><strong>SSH (Secure Shell):</strong> Puerto 22</li>
+        <li><strong>HTTP (HyperText Transfer Protocol):</strong> Puerto 80</li>
+        <li><strong>SFTP (Secure File Transfer Protocol):</strong> Puerto 115</li>
+        <li><strong>HTTPS/SSL (Secure HyperText Transfer Protocol/Secure Sockets Layer):</strong> Puerto 443</li>
     </ul>
 </body>
 </html>
