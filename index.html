@@ -35,7 +35,23 @@
         <li><strong>HTTPS/SSL (Secure HyperText Transfer Protocol/Secure Sockets Layer):</strong> Puerto 443</li>
     </ul>
 
-    <p>Las llaves <strong>SSH</strong> son lo más importante para un administrador de servidores, estas nos permiten conectarnos a un servidor para poder ejecutar procesos de forma remota.</p>
-    
+    <p>
+        Las llaves <strong>SSH</strong> son muy importante para un SysAdmin, ya que permiten conectarnos a un servidor y así poder ejecutar comandos de forma remota, de manera muy segura.
+        Estas llaves se recomienda que sean almacenadas en el <strong>home</strong> en una carpeta llamada <strong>.ssh/</strong> y es importante asignarle un nombre al momento de generar una nueva para no sobrescribir una llave con otra.
+    </p>
+
+    <p>Una forma de evitar estar escribiendo <strong>[username]@[ip address]</strong> para acceder a un servidor es creando una configuración que nos haga automático el login y con un alias corto, es la siguiente:</p>
+    <ul>
+        <li><strong>vim .ssh/config:</strong> En este archivo se agregaran las instrucciones a seguir.</li>
+    </ul>
+
+    <p>Dentro del archivo de configuración es importante que se configure primordialmente así:</p>
+    <pre>
+        <strong>Host</strong> [alias]
+            <strong>HostName</strong> [ip address]
+            <strong>Port</strong> 22
+            <strong>User</strong> [username]
+            <strong>IdentityFile</strong> ~/.ssh/[ssh-keyname].pub
+    </pre>
 </body>
 </html>
