@@ -80,20 +80,28 @@
         <!-- Lista desordenada -->
         <ul>
             <li><strong>Modo comandos (ESC):</strong> Permite ejecutar comandos sin modificar el archivo</li>
-            <li><strong>ESC:</strong> Entra al modo comando sí se está en modo inserción</li>
-            <li><strong>Modo inserción (i):</strong> Permite insertar modificaciones al archivo</li>
-            <li><kbd>i:</kbd> Entra al modo insención sí se está en modo comando</li>
-            <li><strong>Modo visual (v):</strong> Permite visualizar el archivo</li>
-            <li><kbd>v:</kbd> Entra al modo visual sí se está en modo comando</li>
-            <li><kbd>u:</kbd> Revierte los cambios de un archivo, es el <kbd>CNTRL + Z</kbd> de VIM</li>
-            <li><strong>Guardar el archivo:</strong> Se realiza con el comando <kbd>:w</kbd></li>
-            <li><strong>Salir sin guardar:</strong> Se reliza con el comando <kbd>:q!</kbd></li>
-            <li><strong>Guardar y salir:</strong> Se reliza con el comando <kbd>:wq</kbd></li>
+            <p><strong><kbd>ESC</kbd></strong> Entra al modo comando sí se está en modo inserción</p>
+            <li><strong>Modo inserción <strong><kbd>i</kbd></strong>:</strong> Permite insertar modificaciones al archivo</li>
+            <p><strong><kbd>i</kbd></strong> Entra al modo insención sí se está en modo comando</p>
+            <li><strong>Modo visual <strong><kbd>v</kbd></strong>:</strong> Permite visualizar el archivo</li>
+            <p><strong><kbd>v</kbd></strong> Entra al modo visual sí se está en modo comando</p>
+            <li><strong><kbd>u</kbd></strong> Revierte los cambios de un archivo, es el <strong><kbd>CNTRL + Z</kbd></strong> de VIM</li>
+            <li><strong>Guardar el archivo:</strong> Se realiza con el comando <strong><kbd>w</kbd></strong></li>
+            <li><strong>Salir sin guardar:</strong> Se reliza con el comando <strong><kbd>q!</kbd></strong></li>
+            <li><strong>Guardar y salir:</strong> Se reliza con el comando <strong><kbd>wq</kbd></strong></li>
         </ul>
 
         <h2>Instalación y configuración de programas</h2>
         <p>En la dirección <strong>/etc/apt/</strong> existe un archivo llamado <strong>source.list</strong> en el se guardan las fuentes de los repositorios que el sistema consultará al momento de instalar un paquete.</p>
-        
+        <!-- Lista desordenada -->
+        <ul>
+            <li><strong>apt-get:</strong> Este programa "es un manejador de paquetes" y nos permite instalar, desintalar y/o actualizar paquete</li>
+            <p>Con <strong>install</strong> seguido del nombre de un paquete podemos instalar dicho paquete; para desintalar basta con usar <strong>remove</strong> seguido del paquete que queramos desintalar</p>
+            <li><strong>dpkg -i [url-package].deb:</strong> Permite instalar paquete, por ejemplo los .deb</li>
+            <li><strong>dpgk -P [name-package]:</strong> Elimina completamente el paquede incluyento sus datos, absolutamente todo.</li>
+            <p>Desintalar los programas con <strong>dpkg -P</strong> no es una forma muy correcta de hacerlo ya este comando solo elimina el paquete que se le ordeno más no los programas que dependen de el, en cambio con <strong>apt-get remove</strong> se desintalan los paquetes de forma inteligente con todo y los programas dependientes a el.</p>
+            <li><strong>aptitude:</strong> Este programa permite buscar, administrar e instalar paquetes en Linux de una forma más avanzada que con <strong>apt-get install</strong></li>
+        </ul>
     </div>
 
     <!-- Pie de página -->
