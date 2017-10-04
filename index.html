@@ -98,13 +98,13 @@
             <li><strong>Modo comandos <strong><kbd>ESC</kbd></strong>:</strong> Permite ejecutar comandos sin modificar el archivo</li>
             <p><strong><kbd>ESC</kbd></strong> Entra al modo comando sí se está en modo inserción</p>
             <li><strong>Modo inserción <strong><kbd>i</kbd></strong>:</strong> Permite insertar modificaciones al archivo</li>
-            <p><strong><kbd>i</kbd></strong> Entra al modo insención sí se está en modo comando</p>
+            <p><strong><kbd>i</kbd></strong> Entra al modo inserción sí se está en modo comando</p>
             <li><strong>Modo visual <strong><kbd>v</kbd></strong>:</strong> Permite visualizar el archivo</li>
             <p><strong><kbd>v</kbd></strong> Entra al modo visual sí se está en modo comando</p>
             <li><strong><kbd>u</kbd></strong> Revierte los cambios de un archivo, es el <strong><kbd>CNTRL + Z</kbd></strong> de VIM</li>
             <li><strong>Guardar el archivo:</strong> Se realiza con el comando <strong><kbd>w</kbd></strong></li>
-            <li><strong>Salir sin guardar:</strong> Se reliza con el comando <strong><kbd>q!</kbd></strong></li>
-            <li><strong>Guardar y salir:</strong> Se reliza con el comando <strong><kbd>wq</kbd></strong></li>
+            <li><strong>Salir sin guardar:</strong> Se realiza con el comando <strong><kbd>q!</kbd></strong></li>
+            <li><strong>Guardar y salir:</strong> Se realiza con el comando <strong><kbd>wq</kbd></strong></li>
         </ul>
 
         <h2>Instalación y configuración de programas</h2>
@@ -114,12 +114,23 @@
             <li><strong>apt-get:</strong> Este programa "es un manejador de paquetes" y nos permite instalar, desintalar y/o actualizar paquete</li>
             <p>Con <strong>install</strong> seguido del nombre de un paquete podemos instalar dicho paquete; para desintalar basta con usar <strong>remove</strong> seguido del paquete que queramos desintalar</p>
             <li><strong>dpkg -i [url-package].deb:</strong> Permite instalar paquete, por ejemplo los .deb</li>
-            <li><strong>dpgk -P [name-package]:</strong> Elimina completamente el paquede incluyento sus datos, absolutamente todo.</li>
+            <li><strong>dpgk -P [name-package]:</strong> Elimina completamente el paquete incluyento sus datos, absolutamente todo.</li>
             <p>Desintalar los programas con <strong>dpkg -P</strong> no es una forma muy correcta de hacerlo ya este comando solo elimina el paquete que se le ordeno más no los programas que dependen de el, en cambio con <strong>apt-get remove</strong> se desintalan los paquetes de forma inteligente con todo y los programas dependientes a el.</p>
             <li><strong>aptitude:</strong> Este programa permite buscar, administrar e instalar paquetes en Linux de una forma más avanzada que con <strong>apt-get install</strong></li>
         </ul>
 
-        <p>...</p>
+        <p>Al momento de hablar de <strong>"empaquetar"</strong> y <strong>"comprimir"</strong> se debe entender a primera instancia que son dos cosas totalmente distintas.</p>
+        <!-- Lista desordenada -->
+        <ul>
+            <li><strong>Empaquetar:</strong> Tomar varios archivos y hacer de ellos uno solo.</li>
+            <pre><strong>tar</strong> cvf [directorio de salida] [carpeta a empaquetar]</pre>
+            <li><strong>Comprimir:</strong> Tomar un archivo y reducir su tamaño por medio de diferentes algoritmos (si quieres saber como funciona la compresión de un archivo dale click <a href="https://platzi.com/clases/ingenieria/concepto/archivos-y-estructuras-de-datos/como-funciona-zip-arboles-binarios/material/" target="_blank">aquí</a>) de esta forma se genera finalmente un archivo con un menor tamaño.</li>
+            <pre><strong>gzip</strong> -9r [archivo a comprimir]</pre>
+            <li>Para <strong>empaquetar</strong> y <strong>comprimir</strong> al mismo tiempo: Es importante conocer que la <strong>c</strong> requiere crear el archivo, la <strong>v</strong> solicita la información detallada y <strong>f</strong> toma un argumento que establece el nombre del archivo a operar. En esta caso la <strong>z</strong> se utiliza para comprimir.</li>
+            <pre><strong>tar c</strong>vf<strong>z</strong> archivo.tar.gz [carpeta para comprimir]</pre>
+            <li>Para <strong>desempaquetar</strong> y <strong>descomprimir</strong> al mismo tiempo: En este caso el parámetros que cambia (la <strong>c</strong> por la <strong>x</strong>) significa; "extraer un archivo".</li>
+            <pre><strong>tar x</strong>vf<strong>z</strong> archivo.tar.gz</pre>
+        </ul>
     </div>
 
     <!-- Pie de página -->
@@ -139,7 +150,7 @@
             <!-- Créditos a Platzi -->
         </div>
         <div class="container-fluid">
-            <p class="text-center white">Esta guía fué realizada por <a href="https://twitter.com/JoaquinAraujoJS" target="_blank" class="white">Joaquin Araujo</a> y es un resumen del <a href="https://platzi.com/cursos/linux/" target="_blank" class="white">Curso de Administración de Servidores de Linux</a> de <a href="https://platzi.com" target="_blank" class="white">Platzi</a></p>
+            <p class="text-center white">Esta guía fue realizada por <a href="https://twitter.com/JoaquinAraujoJS" target="_blank" class="white">Joaquin Araujo</a> y es un resumen del <a href="https://platzi.com/cursos/linux/" target="_blank" class="white">Curso de Administración de Servidores de Linux</a> de <a href="https://platzi.com" target="_blank" class="white">Platzi</a></p>
         </div>
     </footer>
 </body>
