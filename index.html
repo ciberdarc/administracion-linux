@@ -2,29 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Guía básica del Curso de Administración de Servidores Linux</title>
+    <title>Guía del Curso de Administración de Servidores Linux</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="assets/android-icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
+    <link rel="manifest" href="assets/manifest.json">
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
     <style type="text/css">
         div.jumbotron {
-            background-image: url('assets/terminal.png');
+            background-image: url('assets/linux-terminal.png');
+            background-position: top;
+            background-color: #333333;
         }
             .white {
                 color: white !important;
@@ -34,11 +25,12 @@
 <body>
     <div class="jumbotron">
         <div class="container">
-            <h1 class="white">Guía básica del Curso de Administración de Servidores Linux</h1>
+            <h1 class="white">Guía del Curso de Administración de Servidores Linux</h1>
         </div>
     </div>
 
     <div class="container">
+        <h2>Introducción a Linux</h2>
         <p>A continuación se listarán y detallarán los comandos más esenciales a la hora de administrar servidores Linux.</p>
         <!-- Lista desordenada -->
         <ul>
@@ -67,7 +59,7 @@
         </ul>
 
         <p>
-            Las llaves <strong>SSH</strong> son muy importante para un SysAdmin, ya que permiten conectarnos a un servidor y así poder ejecutar comandos de forma remota, de manera muy segura.
+            Las llaves <strong>SSH</strong> son muy importante para un <strong>SysAdmin</strong>, ya que permiten conectarnos a un servidor y así poder ejecutar comandos de forma remota, de manera muy segura.
             Estas llaves se recomienda que sean almacenadas en el <strong>home</strong> en una carpeta llamada <strong>.ssh/</strong> y es importante asignarle un nombre al momento de generar una nueva para no sobrescribir una llave con otra.
         </p>
 
@@ -98,6 +90,10 @@
             <li><strong>Salir sin guardar:</strong> Se reliza con el comando <kbd>:q!</kbd></li>
             <li><strong>Guardar y salir:</strong> Se reliza con el comando <kbd>:wq</kbd></li>
         </ul>
+
+        <h2>Instalación y configuración de programas</h2>
+        <p>En la dirección <strong>/etc/apt/</strong> existe un archivo llamado <strong>source.list</strong> en el se guardan las fuentes de los repositorios que el sistema consultará al momento de instalar un paquete.</p>
+        
     </div>
 
     <!-- Pie de página -->
