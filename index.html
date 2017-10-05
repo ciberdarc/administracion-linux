@@ -274,6 +274,21 @@
                 <li><strong><kbd>lvs</kbd></strong> Este comando lista las particiones que se han hecho de los grupos existentes (partición lógica).</li>
             </ul>
             <p>A este tipo de particiones también se les puede dar su respectivo formato con el comando <strong><kbd>mkfs.[formato] /dev/[nombre del grupo]/[nombre del volumen lógico]</kbd></strong></p>
+        
+            <p>Los <strong>SysAdmin</strong> comúnmente deben apagar, reiniciar servidores de forma remota pero se debe tener en cuenta que:</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li>Verificar en cual servidor se esta conectado.</li>
+                <li>Es diferente apagar y reiniciar.</li>
+                <li><strong>Linux no pregunta confirmación.</strong></li>
+            </ul>
+
+            <p>Los comandos para realizar estas tareas son:</p>
+            <ul>
+                <li><strong><kbd>shutdown -r now</kbd></strong> Este comando reiniciar la maquina.</li>
+                <li><strong><kbd>shutdown -h now</kbd></strong> Este comando <strong>apaga la maquina</strong>. La forma de encenderla nuevamente debe ser de manera física.</li>
+            </ul>
+            <p>Con el comando <strong><kbd>systemctl --help</kbd></strong> podemos obtener información de comandos para operar la maquina.</p>
         </section>
     </div>
 
