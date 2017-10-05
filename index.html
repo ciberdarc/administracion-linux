@@ -51,18 +51,18 @@
             <p>A continuación se listarán y detallarán los comandos más esenciales a la hora de administrar servidores Linux.</p>
             <!-- Lista desordenada -->
             <ul>
-                <li><strong>ifconfig:</strong> Permite ver las network interfaces</li>
-                <li><strong>ifdown [network interface]:</strong> Desactiva dicha interface</li>
-                <li><strong>ifup [network interface]:</strong> Activa dicha interface</li>
+                <li><strong><kbd>ifconfig</kbd></strong> Permite ver las network interfaces</li>
+                <li><strong><kbd>ifdown [network interface]</kbd></strong> Desactiva dicha interface</li>
+                <li><strong><kbd>ifup [network interface]</kbd></strong> Activa dicha interface</li>
                 <p>Los binarios se encuentran en: <strong>/sbin/if...</strong></p>
-                <li><strong>ping [ip address]:</strong> Permite realizar ping a dicha IP</li>
-                <li><strong>ssh [ip address] o ssh [username]@[ip address]:</strong> Permite conectarse por medio de SSH a un servidor (ubicado en dicha IP)</li>
-                <li><strong>ssh-keygen -t rsa -b 4096 -C [your_email@example.com]:</strong> Permite generar una llave ssh tipo rsa</li>
-                <li><strong>ssh-copy-id -i [ssh-key address].pub [username]@[ip address]:</strong> Envia una copia de la llave ssh "pública" a un servidor (ubicado en dicha IP)</li>
+                <li><strong><kbd>ping [ip address]</kbd></strong> Permite realizar ping a dicha IP</li>
+                <li><strong><kbd>ssh [ip address] o ssh [username]@[ip address]</kbd></strong> Permite conectarse por medio de SSH a un servidor (ubicado en dicha IP)</li>
+                <li><strong><kbd>ssh-keygen -t rsa -b 4096 -C [your_email@example.com]</kbd></strong> Permite generar una llave ssh tipo rsa</li>
+                <li><strong><kbd>ssh-copy-id -i [ssh-key address].pub [username]@[ip address]</kbd></strong> Envia una copia de la llave ssh "pública" a un servidor (ubicado en dicha IP)</li>
                 <p>En el servidor se crea una carpeta en el home <strong>(.ssh/authorized_keys)</strong>; donde almacena la llave ssh "pública". </p>
-                <li><strong>sudo vim /etc/ssh/sshd_config</strong>: En este archivo de configuración se debe editar la opción para que la única forma de conectarse al servidor sea por medio de ssh y no por medio de username y password.</li>
+                <li><strong><kbd>sudo vim /etc/ssh/sshd_config</kbd></strong> En este archivo de configuración se debe editar la opción para que la única forma de conectarse al servidor sea por medio de ssh y no por medio de username y password.</li>
                 <p>La opción a editar es: <strong>PasswordAuthentication [no]</strong>, colocar no; para evitar la autenticación por medio de username y password</p>
-                <li><strong>sudo /etc/init.d/ssh restart</strong>: Reinicia el servicio ssh; y aplica los cambios</li>
+                <li><strong><kbd>sudo /etc/init.d/ssh restart</kbd></strong> Reinicia el servicio ssh; y aplica los cambios</li>
             </ul>
 
             <p>A continuación se muestran los puertos más básicos (que debemos conocer) en <strong>Linux</strong>.</p>
@@ -82,7 +82,7 @@
 
             <p>Una forma de evitar estar escribiendo <strong>[username]@[ip address]</strong> para acceder a un servidor es creando una configuración que nos haga automático el login y con un alias corto, es la siguiente:</p>
             <ul>
-                <li><strong>vim .ssh/config:</strong> En este archivo se agregaran las instrucciones a seguir.</li>
+                <li><strong><kbd>vim .ssh/config</kbd></strong> En este archivo se agregaran las instrucciones a seguir.</li>
             </ul>
 
             <p>Dentro del archivo de configuración es importante que se configure primordialmente así:</p>
@@ -114,12 +114,12 @@
             <p>En la dirección <strong>/etc/apt/</strong> existe un archivo llamado <strong>source.list</strong> en el se guardan las fuentes de los repositorios que el sistema consultará al momento de instalar un paquete.</p>
             <!-- Lista desordenada -->
             <ul>
-                <li><strong>apt-get:</strong> Este programa "es un manejador de paquetes" y nos permite instalar, desintalar y/o actualizar paquete</li>
-                <p>Con <strong>install</strong> seguido del nombre de un paquete podemos instalar dicho paquete; para desintalar basta con usar <strong>remove</strong> seguido del paquete que queramos desintalar</p>
-                <li><strong>dpkg -i [url-package].deb:</strong> Permite instalar paquete, por ejemplo los .deb</li>
-                <li><strong>dpgk -P [name-package]:</strong> Elimina completamente el paquete incluyento sus datos, absolutamente todo.</li>
-                <p>Desintalar los programas con <strong>dpkg -P</strong> no es una forma muy correcta de hacerlo ya este comando solo elimina el paquete que se le ordeno más no los programas que dependen de el, en cambio con <strong>apt-get remove</strong> se desintalan los paquetes de forma inteligente con todo y los programas dependientes a el.</p>
-                <li><strong>aptitude:</strong> Este programa permite buscar, administrar e instalar paquetes en Linux de una forma más avanzada que con <strong>apt-get install</strong></li>
+                <li><strong><kbd>apt-get</kbd></strong> Este programa "es un manejador de paquetes" y nos permite instalar, desintalar y/o actualizar paquete</li>
+                <p>Con <strong><kbd>install</kbd></strong> seguido del nombre de un paquete podemos instalar dicho paquete; para desintalar basta con usar <strong><kbd>remove</kbd></strong> seguido del paquete que queramos desintalar</p>
+                <li><strong><kbd>dpkg -i [url-package].deb</kbd></strong> Permite instalar paquete, por ejemplo los .deb</li>
+                <li><strong><kbd>dpgk -P [name-package]</kbd></strong> Elimina completamente el paquete incluyendo sus datos, absolutamente todo.</li>
+                <p>Desintalar los programas con <strong><kbd>dpkg -P</kbd></strong> no es una forma muy correcta de hacerlo ya este comando solo elimina el paquete que se le ordeno más no los programas que dependen de el, en cambio con <strong><kbd>apt-get remove</kbd></strong> se desintalan los paquetes de forma inteligente con todo y los programas dependientes a el.</p>
+                <li><strong><kbd>aptitude</kbd></strong> Este programa permite buscar, administrar e instalar paquetes en <strong>Linux</strong> de una forma más avanzada que con <strong><kbd>apt-get install</kbd></strong></li>
             </ul>
 
             <p>Al momento de hablar de <strong>"empaquetar"</strong> y <strong>"comprimir"</strong> se debe entender a primera instancia que son dos cosas totalmente distintas.</p>
@@ -162,7 +162,7 @@
             <p>Todos los discos duros tienen particiones. Las particiones permiten dividir un disco asignándole un espacio del disco a cada una de ellas.</p>
             <!-- Lista desordenada -->
             <ul>
-                <li><strong>fdisk -l</strong>: Muestra los discos y las particiones que existen. A continuación se muestra que existen 2 discos duros (la práctica la hice en VirtualBox) y su respectivas particiones.</li>
+                <li><strong><kbd>fdisk -l</kbd></strong> Muestra los discos y las particiones que existen. A continuación se muestra que existen 2 discos duros (la práctica la hice en VirtualBox) y su respectivas particiones.</li>
                 <pre>
                     <strong>Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors</strong>
                     Units: sectors of 1 * 512 = 512 bytes
@@ -181,7 +181,7 @@
                     Units: sectors of 1 * 512 = 512 bytes
                     Sector size (logical/physical): 512 bytes / 512 bytes
                     I/O size (minimum/optimal): 512 bytes / 512 bytes</pre>
-                <li><strong>fdisk /dev/[disco duro]</strong>: Selecciona el disco duro en el cual se harán las particiones (en este caso en de 4GB).</li>
+                <li><strong><kbd>fdisk /dev/[disco duro]</kbd></strong> Selecciona el disco duro en el cual se harán las particiones (en este caso en de 4GB).</li>
                 <p><strong><kbd>m</kbd></strong> Con esta opción se listan los diferentes comandos del programa.</p>
                 <p><strong><kbd>p</kbd></strong> Con esta opción se muestra la forma en el que se encuentra particionado el disco duro. En este caso no tiene nada.</p>
                 <p><strong><kbd>n</kbd></strong> Esta opción permite crear una nueva partición en el disco. Al intentar crear una partición se le preguntará si será <strong><kbd>p</kbd> primary</strong> o <strong><kbd>e</kbd> extended</strong>. Para finalizar se le coloca el tamaño de la partición, por ejemplo, <strong><kbd>+1G</kbd></strong> en este caso.</p>
@@ -196,18 +196,18 @@
             <p>Existen muchos tipos de sistemas de archivos, cada uno tiene características que lo hacen útil para diferentes dispositivos.</p>
             <!-- Lista desordenada -->
             <ul>
-                <li><strong>Formato con FAT32:</strong> Ejecutando el comando <strong>mkfs.vfat /dev/[nombre de la partición]</strong> se le da un formato FAT32 a dicha partición.</li>
-                <li><strong>Formato con EXT3:</strong> Ejecutando el comando <strong>mkfs.ext3 /dev/[nombre de la partición]</strong> se le da un formato EXT3 a dicha partición.</li>
-                <li><strong>Formato con EXT4:</strong> Ejecutando el comando <strong>mkfs.ext4 /dev/[nombre de la partición]</strong> se le da un formato EXT4 a dicha partición.</li>
-                <li><strong>Formato con XFS:</strong> Ejecutando el comando <strong>mkfs.xfs /dev/[nombre de la partición]</strong> se le da un formato XFS a dicha partición.</li>
+                <li><strong>Formato con FAT32:</strong> Ejecutando el comando <strong><kbd>mkfs.vfat /dev/[nombre de la partición]</kbd></strong> se le da un formato FAT32 a dicha partición.</li>
+                <li><strong>Formato con EXT3:</strong> Ejecutando el comando <strong><kbd>mkfs.ext3 /dev/[nombre de la partición]</kbd></strong> se le da un formato EXT3 a dicha partición.</li>
+                <li><strong>Formato con EXT4:</strong> Ejecutando el comando <strong><kbd>mkfs.ext4 /dev/[nombre de la partición]</kbd></strong> se le da un formato EXT4 a dicha partición.</li>
+                <li><strong>Formato con XFS:</strong> Ejecutando el comando <strong><kbd>mkfs.xfs /dev/[nombre de la partición]</kbd></strong> se le da un formato XFS a dicha partición.</li>
             </ul>
 
             <p>Para <strong>montar una partición</strong> se debe crear un directorio por cada partición que se quiera montar.</p>
             <!-- Lista desordenada -->
             <ul>
-                <li><strong>mkdir [nombre de la carpeta]:</strong> Crea un directorio</li>
-                <li><strong>mount [nombre de la partición a montar] [nombre de la carpeta donde se montará la partición]:</strong> Monta una partición.</li>
-                <li><strong>umount [nombre de la carpeta donde se encuentra montada la partición]:</strong> Desmonta una partición.</li>
+                <li><strong><kbd>mkdir [nombre de la carpeta]</kbd></strong> Crea un directorio</li>
+                <li><strong><kbd>mount [nombre de la partición a montar] [nombre de la carpeta donde se montará la partición]</kbd></strong> Monta una partición.</li>
+                <li><strong><kbd>umount [nombre de la carpeta donde se encuentra montada la partición]</kbd></strong> Desmonta una partición.</li>
                 <li><strong><kbd>df -h</kbd></strong> Muestra los directorios de como se tiene montado el sistema.</li>
             </ul>
             <p>Para montar una partición de forma automática solo hay que editar un archivo en <strong>/etc/fstab</strong> y añadimos:</p>
@@ -220,11 +220,60 @@
                 <li><strong>defaults,discard:</strong> Se describe si se cargará o no al inicio del sistema.</li>
                 <p>Para terminar solo falta montarla <strong>/[carpeta que se usó para montar (punto de montaje)].</strong></p>
             </ul>
-            <p>El area de intercambio o partición swap, es muy útil para máquinas que tienen muy poca memoria RAM.</p>
+            <p>El área de intercambio o partición swap, es muy útil para máquinas que tienen muy poca memoria RAM.</p>
             <ul>
                 <li><strong><kbd>free</kbd></strong> Este programa muestra el uso de la memoria RAM y la swap.</li>
                 <li><strong><kbd>htop</kbd></strong> Este programa también muestra el uso del CPU, memoria RAM, la swap, entre otras cosas. Es programa es más completo y se debe instalar.</li>
             </ul>
+
+            <p><strong>Swap</strong> es un espacio de intercambio que utiliza el disco duro, en lugar de la RAM para almacenar datos temporalmente.</p>
+            <ul>
+                <li>Con el comando <strong><kbd>mkswap [nombre de la partición swap]</kbd></strong> formateamos la partición de tipo <strong>swap</strong>.</li>
+                <li>Con el comando <strong><kbd>swapon [nombre de la partición swap]</kbd></strong> activo la partición <strong>swap</strong>.</li>
+                <li>Con el comando <strong><kbd>swapoff [nombre de la partición swap]</kbd></strong> desactivo la partición <strong>swap</strong>.</li>
+            </ul>
+
+            <p>El <strong>GRUB</strong> es un gestor de arranque que permite cargar el <strong>kernel de linux</strong> y el sistema.</p>
+            <ul>    
+                <li>Los archivos del <strong>GRUB</strong> se encuentran en el directorio: <strong>/etc/grub.d</strong></li>
+                <li>En <strong>/boot/grub/grub.cfg</strong> se encuentran el archivo de configuración. No modificar este archivo.</li>
+                <li>Con el comando <strong><kbd>grub install [nombre del disco duro]</kbd></strong> se inicia la instalación del <strong>GRUB</strong>. Si en algún momento ocurre un error al iniciar el sistema, comúnmente con este comando se soluciona.</li>
+            </ul>
+
+            <h4>Administrar discos duros con LVM <small>(Logical Volume Management)</small></h4>
+            <p><strong>LVM</strong> nos permite realizar una configuración de discos duros que nos permita administrar el espacio de almacenamiento del servidor.</p>
+            <ul>
+                <li><strong><kbd>apt-get install lvm2</kbd></strong> Instala la configuración de LVM.</li>
+            </ul>
+            <p>Ante todo se debe crear la partición y darle el formato <strong>Linux LVM (8e)</strong> con <strong><kbd>fdisk</kbd></strong>.</p>
+            
+            <h5>Volúmenes físicos (Physical Volumes):</h5>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>pvcreate /dev/[nombre de la partición]</kbd></strong> Este comando agrega la partición a los volúmenes físicos del LVM.</li>
+                <li><strong><kbd>pvremove /dev/[nombre de la partición]</kbd></strong> Este comando elimina la partición a los volúmenes físicos del LVM.</li>
+                <li><strong><kbd>pvscan</kbd></strong> Este comando lista las particiones que están agregadas en los volúmenes físicos del LVM y el tamaño total de la suma de todas las particiones.</li>
+                <li><strong><kbd>pvs</kbd></strong> Este comando lista los volúmenes lógicos.</li>
+            </ul>
+            
+            <h5>Grupo de volúmenes (Volume Groups): Agrupación de volúmenes físicos.</h5>
+            <!-- Lista desordenada -->
+            <ul>    
+                <li><strong><kbd>vgcreate [nombre del grupo] /dev/[nombre de la partición]</kbd></strong> Este comando permite agregar la partición a un grupo.</li>
+                <li><strong><kbd>vgextend [nombre del grupo] /dev/[nombre de la partición]</kbd></strong> Este comando permite agregar más particiones a un grupo existente.</li>
+                <li><strong><kbd>vgreduce [nombre del grupo] /dev/[nombre de la partición]</kbd></strong> Este comando permite elimina la partición de un grupo.</li>
+                <li><strong><kbd>vgdisplay</kbd></strong> Este comando lista y detalla los grupos existentes.</li>
+                <li><strong><kbd>vgs</kbd></strong> Este comando lista los grupos existentes.</li>
+            </ul>
+            
+            <h5>Volúmenes lógicos (Logical Volumes):</h5>
+            <!-- Lista desordenada -->
+            <ul>    
+                <li><strong><kbd>lvcreate -n [nombre de la partición lógica] -L [tamaño]G [nombre del grupo]</kbd></strong> Este comando crea una partición lógica tomando un grupo existente como su espacio.</li>
+                <li><strong><kbd>lvextend -L+[tamaño]G /dev/[nombre del grupo]/[nombre del volumen lógico]</kbd></strong> Extiende el tamaño del volumen lógico, según el espacio que tenga disponible el grupo que se usó para crear dicho volumen lógico.</li>
+                <li><strong><kbd>lvs</kbd></strong> Este comando lista las particiones que se han hecho de los grupos existentes (partición lógica).</li>
+            </ul>
+            <p>A este tipo de particiones también se les puede dar su respectivo formato con el comando <strong><kbd>mkfs.[formato] /dev/[nombre del grupo]/[nombre del volumen lógico]</kbd></strong></p>
         </section>
     </div>
 
