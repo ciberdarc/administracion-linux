@@ -159,7 +159,72 @@
                 <li><strong>/boot</strong>: Directorio donde se almacenen todos los archivos necesarios para el arranque del sistema.</li>
             </ul>
             
-            
+            <p>Todos los discos duros tienen particiones. Las particiones permiten dividir un disco asignándole un espacio del disco a cada una de ellas.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong>fdisk -l</strong>: Muestra los discos y las particiones que existen. A continuación se muestra que existen 2 discos duros (la práctica la hice en VirtualBox) y su respectivas particiones.</li>
+                <pre>
+                    <strong>Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors</strong>
+                    Units: sectors of 1 * 512 = 512 bytes
+                    Sector size (logical/physical): 512 bytes / 512 bytes
+                    I/O size (minimum/optimal): 512 bytes / 512 bytes
+                    Disklabel type: dos
+                    Disk identifier: 0x83cdfcea
+
+                    <strong>Device     Boot    Start      End  Sectors  Size Id Type</strong>
+                    /dev/sda1  *        2048 19922943 19920896  9.5G 83 Linux
+                    /dev/sda2       19924990 20969471  1044482  510M  5 Extended
+                    /dev/sda5       19924992 20969471  1044480  510M 82 Linux swap / Solar
+
+
+                    <strong>Disk /dev/sdb: 4 GiB, 4294967296 bytes, 8388608 sectors</strong>
+                    Units: sectors of 1 * 512 = 512 bytes
+                    Sector size (logical/physical): 512 bytes / 512 bytes
+                    I/O size (minimum/optimal): 512 bytes / 512 bytes</pre>
+                <li><strong>fdisk /dev/[disco duro]</strong>: Selecciona el disco duro en el cual se harán las particiones (en este caso en de 4GB).</li>
+                <p><strong><kbd>m</kbd></strong> Con esta opción se listan los diferentes comandos del programa.</p>
+                <p><strong><kbd>p</kbd></strong> Con esta opción se muestra la forma en el que se encuentra particionado el disco duro. En este caso no tiene nada.</p>
+                <p><strong><kbd>n</kbd></strong> Esta opción permite crear una nueva partición en el disco. Al intentar crear una partición se le preguntará si será <strong><kbd>p</kbd> primary</strong> o <strong><kbd>e</kbd> extended</strong>. Para finalizar se le coloca el tamaño de la partición, por ejemplo, <strong><kbd>+1G</kbd></strong> en este caso.</p>
+                <p><strong>Nota:</strong> Algo muy importante a tener en cuenta es que solo se pueden crear 4 particiones primarias y muchas lógicas (las particiones lógicas sirven como contenedor para más particiones).</p>
+                <p><strong><kbd>q</kbd></strong> Esta opción permite salir sin guardar los cambios.</p>
+                <p><strong><kbd>l</kbd></strong> Lista todos los tipos de particiones que existen. Para establecer alguna se debe usar su número de identificación.</p>
+                <p><strong><kbd>t</kbd></strong> Esta opción permite cambiar el tipo de.</p>
+                <p><strong><kbd>w</kbd></strong> Con esta opción se guardan los cambios y sale de <strong>fdisk</strong>.</p>
+                <p><strong><kbd>w</kbd></strong> Esta opción permite eliminar particiones.</p>
+            </ul>
+
+            <p>Existen muchos tipos de sistemas de archivos, cada uno tiene características que lo hacen útil para diferentes dispositivos.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong>Formato con FAT32:</strong> Ejecutando el comando <strong>mkfs.vfat /dev/[nombre de la partición]</strong> se le da un formato FAT32 a dicha partición.</li>
+                <li><strong>Formato con EXT3:</strong> Ejecutando el comando <strong>mkfs.ext3 /dev/[nombre de la partición]</strong> se le da un formato EXT3 a dicha partición.</li>
+                <li><strong>Formato con EXT4:</strong> Ejecutando el comando <strong>mkfs.ext4 /dev/[nombre de la partición]</strong> se le da un formato EXT4 a dicha partición.</li>
+                <li><strong>Formato con XFS:</strong> Ejecutando el comando <strong>mkfs.xfs /dev/[nombre de la partición]</strong> se le da un formato XFS a dicha partición.</li>
+            </ul>
+
+            <p>Para <strong>montar una partición</strong> se debe crear un directorio por cada partición que se quiera montar.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong>mkdir [nombre de la carpeta]:</strong> Crea un directorio</li>
+                <li><strong>mount [nombre de la partición a montar] [nombre de la carpeta donde se montará la partición]:</strong> Monta una partición.</li>
+                <li><strong>umount [nombre de la carpeta donde se encuentra montada la partición]:</strong> Desmonta una partición.</li>
+                <li><strong><kbd>df -h</kbd></strong> Muestra los directorios de como se tiene montado el sistema.</li>
+            </ul>
+            <p>Para montar una partición de forma automática solo hay que editar un archivo en <strong>/etc/fstab</strong> y añadimos:</p>
+            <pre><strong>/dev/[nombre de la partición]    /[carpeta donde se montará (punto de montaje)]    ext4    defaults,discard    0 0</strong></pre>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong>/dev/[nombre de la partición]:</strong> Se describe la partición a montar (con su número).</li>
+                <li><strong>/[carpeta donde se montará]:</strong> Se describe el punto de montaje (es importante que lo creemos antes).</li>
+                <li><strong>ext4:</strong> Se describe el formato de la partición con el cual se montará.</li>
+                <li><strong>defaults,discard:</strong> Se describe si se cargará o no al inicio del sistema.</li>
+                <p>Para terminar solo falta montarla <strong>/[carpeta que se usó para montar (punto de montaje)].</strong></p>
+            </ul>
+            <p>El area de intercambio o partición swap, es muy útil para máquinas que tienen muy poca memoria RAM.</p>
+            <ul>
+                <li><strong><kbd>free</kbd></strong> Este programa muestra el uso de la memoria RAM y la swap.</li>
+                <li><strong><kbd>htop</kbd></strong> Este programa también muestra el uso del CPU, memoria RAM, la swap, entre otras cosas. Es programa es más completo y se debe instalar.</li>
+            </ul>
         </section>
     </div>
 
