@@ -36,6 +36,10 @@
                             footer div.container-fluid p {
                                 margin: .5%;
                             }
+                                kbd {
+                                        padding: 2px 6px;
+                                        font-size: 95%;
+                                    }
     </style>
 </head>
 <body>
@@ -289,6 +293,43 @@
                 <li><strong><kbd>shutdown -h now</kbd></strong> Este comando <strong>apaga la maquina</strong>. La forma de encenderla nuevamente debe ser de manera física.</li>
             </ul>
             <p>Con el comando <strong><kbd>systemctl --help</kbd></strong> podemos obtener información de comandos para operar la maquina.</p>
+        </section>
+
+        <section>
+            <h2>El sistema y que hay que hacer</h2>
+
+            <p>Las variables de entorno permiten configurar diferentes ambientes, sea de desarrollo o de producción, estas también guardan llaves de seguridad.</p>
+            <ul>
+                <li>¿Como configurar una variable de entorno?</li>
+                <pre><strong>PLATZI="https://platzi.com"</strong></pre>
+                <li>¿Como imprimir una variable de entorno?</li>
+                <pre><strong>$PLATZI</strong></pre>
+            </ul>
+
+            <p>Los archivos <strong>.bashrc</strong> y <strong>.profile</strong> guardan configuraciones de la sesión como "alias" (variables de entorno).</p>
+            <p>Para declarar variables de entorno se puede hacer en los archivos <strong>/etc/profile</strong> y/o <strong>/etc/bash.bashrc</strong>, la diferencia entre ellos es que el primero solo afecta al usuario donde se creo la variable mientras que este último afecta a todos los usuarios. La lógica para agregar variables de entorno es la misma que se usar para declararlas a través de la terminal, sin embargo para que la variable se mantenga presente en un inicio de sesión distinto se debe anteponer la palabra <strong>export</strong>.</p>
+            
+            <p>Una tarea muy común de un administrador de sistemas es leer archivos, leer logs, unos comandos muy importantes que se deben conocer son los siguientes:</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>lees [nombre del archivo]</kbd></strong> Permite leer un archivo. Con <strong><kbd>G</kbd></strong> se puede ir al final del archivo.</li>
+                <li><strong><kbd>more [nombre del archivo]</kbd></strong> Permite leer un archivo de manera secuencial.</li>
+                <li><strong><kbd>cat [nombre del archivo]</kbd></strong> Imprime el contenido completo de un archivo.</li>
+                <li><strong><kbd>head [nombre del archivo]</kbd></strong> Imprime el principio de un archivo.</li>
+                <li><strong><kbd>tail [nombre del archivo]</kbd></strong> Imprime el final de un archivo.</li>
+                <li><strong><kbd>grep -r "[filtrar información]" *</kbd></strong> Permite buscar en un archivo una cadena de texto. La bandera <strong>-r</strong> indica que la búsqueda se realizará de manera recursiva.</li>
+                <li><strong><kbd>wc [archivo]</kbd></strong> Cuenta las líneas de un archivo.</li>
+            </ul>
+
+            <p>Algo muy importante de conocer es la forma como se encadenan procesos, estas tareas se pueden realizar con los comandos:</p>
+            <ul>
+                <li><strong><kbd>grep -r "[filtrar información]" * | wc</kbd></strong> El resultado de <strong><kbd>grep</kbd></strong> por medio de <strong><kbd>|</kbd></strong> se le pasa a <strong><kbd>wc</kbd></strong> y así se encadenan procesos. La combinación de estos dos comandos da como resultado el número de líneas que se encontró la información filtrada.</li>
+            </ul>
+            <p>Otra cosa sumamente importante es entender como enviar la salida de un comando a un archivo, para eso usamos:</p>
+            <ul>
+                <li><strong><kbd>grep -r "[filtrar información]" * > /[archivo de salida]</kbd></strong> Imprime el resultado del primer comando en un archivo final. Todo se resumen en el uso de <strong><kbd>></kbd></strong></li>
+                <li><strong><kbd>grep -r "[filtrar información]" * >> /[archivo de salida]</kbd></strong> Le suma el resultado del primer comando en un archivo final. Todo se resumen en el uso de <strong><kbd>>></kbd></strong></li>
+            </ul>
         </section>
     </div>
 
