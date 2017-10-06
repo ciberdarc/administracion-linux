@@ -40,6 +40,9 @@
                                         padding: 2px 6px;
                                         font-size: 95%;
                                     }
+                                        blockquote p {
+                                            font-size: .8em;
+                                        }
     </style>
 </head>
 <body>
@@ -322,14 +325,56 @@
             </ul>
 
             <p>Algo muy importante de conocer es la forma como se encadenan procesos, estas tareas se pueden realizar con los comandos:</p>
+            <!-- Lista desordenada -->
             <ul>
                 <li><strong><kbd>grep -r "[filtrar información]" * | wc</kbd></strong> El resultado de <strong><kbd>grep</kbd></strong> por medio de <strong><kbd>|</kbd></strong> se le pasa a <strong><kbd>wc</kbd></strong> y así se encadenan procesos. La combinación de estos dos comandos da como resultado el número de líneas que se encontró la información filtrada.</li>
             </ul>
             <p>Otra cosa sumamente importante es entender como enviar la salida de un comando a un archivo, para eso usamos:</p>
+            <!-- Lista desordenada -->
             <ul>
                 <li><strong><kbd>grep -r "[filtrar información]" * > /[archivo de salida]</kbd></strong> Imprime el resultado del primer comando en un archivo final. Todo se resumen en el uso de <strong><kbd>></kbd></strong></li>
                 <li><strong><kbd>grep -r "[filtrar información]" * >> /[archivo de salida]</kbd></strong> Le suma el resultado del primer comando en un archivo final. Todo se resumen en el uso de <strong><kbd>>></kbd></strong></li>
             </ul>
+
+            <p>En <strong>Linux</strong> todo es un proceso. Los procesos permiten al <strong>OS</strong> trabajar. Los procesos en <strong>Linux</strong> están encapsulados, es decir, el usuario que lanzó el proceso es quien lo debe quitar.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>ps aux</kbd></strong> Muestra todos los procesos que se encuentra corriendo el sistema.</li>
+                <li>Todo proceso en <strong>Linux</strong> tiene un identificador (ID). Ese ID es único.</li>
+                <li><strong><kbd>kill</kbd></strong> Permite matar procesos. Con la bandera <strong>-9</strong> forzamos la muerte de un proceso, sin importar lo que diga.</li>
+                <li>Los procesos en <strong>Linux</strong> tienen una prioridad (NI). Un proceso tiene un valor de prioridad entre -20 y 19. El valor <strong>-20 es el más importante</strong> y así va aumentando hasta llegar al 19.</li>
+            </ul>
+
+            <p>En <strong>Linux</strong> existe algo llamado "enlaces", estos se dividen en los simbólicos y duros.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong>Enlace simbólicos:</strong> Se crean con el comando <strong><kbd>ln -s /[ruta del directorio padre] /[ruta del directorio hijo]</kbd></strong> Referencia a la ubicación del archivo original.</li>
+                <li><strong>Enlace duros:</strong>Se crean con el comando <strong><kbd>ln /[ruta del directorio padre] /[ruta del directorio hijo]</kbd></strong> Este tipo de enlace se caracteriza por que un archivo enlazado al original tiene un nombre diferente.</li>
+                <blockquote>
+                    <p>Se entiende por padre al archivo principal y por hijo al enlace que se crea.</p>
+                </blockquote>
+                <li><strong><kbd>touch [nombre del archivo]</kbd></strong> Permite crear archivos vacíos.</li>
+                <li><strong><kbd>tree</kbd></strong> Este programa de terceros muestra el árbol de directorio.</li>
+            </ul>
+            
+            <h4>Manejo de usuarios y grupos</h4>
+            <p><strong>Linux</strong> es un sistema multiusuarios, cada usuario puede correr con diferentes configuraciones, permisos, entre otras cosas.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>adduser [nombre del usuario]</kbd></strong> Crea un nuevo usuario. Todo usuario tiene un ID único.</li>
+                <li><strong><kbd>deluser [nombre del usuario]</kbd></strong> Elimina un usuario.</li>
+                <li><strong><kbd>passwd [nombre del usuario]</kbd></strong> Cambia la contraseña del usuario.</li>
+                <li><strong><kbd>su - [nombre del usuario]</kbd></strong> Cambia a un usuario puntual.</li>
+                <li><strong><kbd>groups</kbd></strong> Muestra los grupos a los cuales pertenece el usuario donde se realizó la consulta.</li>
+                <li><strong><kbd>addgroup [usuario] [grupo]</kbd></strong> Agrega a un usuario a un grupo.</li>
+                <li><strong><kbd>delgroup [usuario] [grupo]</kbd></strong> Expulsa a un usuario a un grupo.</li>
+                <li><strong><kbd>whoami</kbd></strong> Muestra el nombre del usuario desde donde se realizó la consulta.</li>
+                <li>En <strong>/etc/passwd</strong> están todos los usuarios del sistema.</li>
+                <li>En <strong>/etc/group</strong> están todos los grupos del sistema.</li>
+                <li>En <strong>/etc/shadow</strong> están todas las contraseñas de los usuarios.</li>
+            </ul>
+
+            <p>Si se añada un usuario a un grupo es necesario salir de la sesión e iniciar nuevamente para que tome los cambios realizados.</p>
         </section>
     </div>
 
