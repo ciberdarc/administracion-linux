@@ -27,7 +27,7 @@
                         display: block;
                         margin: 3vh auto;
                     }
-                        p.foo {
+                        p.foo, pre {
                             font-size: 1.1em;
                         }
                         footer div.container-fluid {
@@ -218,7 +218,7 @@
                 <li><strong><kbd>df -h</kbd></strong> Muestra los directorios de como se tiene montado el sistema.</li>
             </ul>
             <p>Para montar una partición de forma automática solo hay que editar un archivo en <strong>/etc/fstab</strong> y añadimos:</p>
-            <pre><strong>/dev/[nombre de la partición]    /[carpeta donde se montará (punto de montaje)]    ext4    defaults,discard    0 0</strong></pre>
+            <pre>/dev/[nombre de la partición]    /[carpeta donde se montará (punto de montaje)]    ext4    defaults,discard    0 0</pre>
             <!-- Lista desordenada -->
             <ul>
                 <li><strong>/dev/[nombre de la partición]:</strong> Se describe la partición a montar (con su número).</li>
@@ -304,9 +304,9 @@
             <p>Las variables de entorno permiten configurar diferentes ambientes, sea de desarrollo o de producción, estas también guardan llaves de seguridad.</p>
             <ul>
                 <li>¿Como configurar una variable de entorno?</li>
-                <pre><strong>PLATZI="https://platzi.com"</strong></pre>
+                <pre><strong>PLATZI</strong>="https://platzi.com"</pre>
                 <li>¿Como imprimir una variable de entorno?</li>
-                <pre><strong>$PLATZI</strong></pre>
+                <pre><strong>$</strong>PLATZI</pre>
             </ul>
 
             <p>Los archivos <strong>.bashrc</strong> y <strong>.profile</strong> guardan configuraciones de la sesión como "alias" (variables de entorno).</p>
@@ -375,6 +375,45 @@
             </ul>
 
             <p>Si se añada un usuario a un grupo es necesario salir de la sesión e iniciar nuevamente para que tome los cambios realizados.</p>
+            
+            <p>El <strong>kernel</strong> es la pieza fundamental del sistema operativo. El <strong>kernel</strong> es el que interactúa entre el hardware y cualquier programa que se este ejecutando en ese momento.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong>/etc/security/limits.conf:</strong> Contiene las límites generales de todo lo que existe en <strong>Linux</strong>.</li>
+            </ul>
+
+            <h4>Permisos de archivos</h4>
+            <p>Los permisos en <strong>Linux</strong> permiten controlar la seguridad del sistema. Algunos comandos importantes son:</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>ls -l</kbd></strong> Lista los archivos y directorios con sus propiedades y sus permisos.</li>
+                <li><strong><kbd>chmod [bloque][+ o -][permiso] [archivo o directorio]</kbd></strong> Permite cambiar los permisos. El parámetro [bloque] define si es el usuario, el grupo o los otros usuarios. Los parámetros [+ o -] para agregar o eliminar. El parámetro [permiso] si es de lectura (read), escritura (write) o ejecución (execution).</li>
+                <li><strong><kbd>chmod 755 [archivo o directorio]</kbd></strong> Permite cambiar los permisos. Lectura (read) tiene un valor de 4, escritura (write) un valor de 2 y ejecución (execution) un valor de 1, la sumatoria entre todos esos da 7, es lo mismo que decir: <strong><kbd>chmod o+rwx [archivo]</kbd></strong>.</li>
+                <li><strong><kbd>chmod u=rwx,g=,o= [archivo o directorio]</kbd></strong> Permite cambiar los permisos. Usuario tiene permiso de lectura, escritura y ejecución, el grupo no tiene ningún permiso y los otros usuarios tampoco.</li>
+            </ul>
+            <pre>
+                <strong>4</strong> Lectura
+                <strong>2</strong> Escritura
+                <strong>1</strong> Ejecución</pre>
+            <pre>
+                <strong>➜  platzi_administracion-linux</strong> git:(master) ✗ ls -l
+                total 44
+                -rwxrwxrwx 1 root root     0 Oct  6 22:50 <strong>archivo</strong>
+                drwxrwxrwx 1 root root  4096 Oct  4 15:06 <strong>assets</strong>
+                -rwxrwxrwx 1 root root 36236 Oct  6 22:50 <strong>index.html</strong>
+                -rwxrwxrwx 1 root root   735 Oct  4 15:06 <strong>README.md</strong></pre>
+
+            <p>El área de permisos esta definida como <strong>-rwxrwxrwx</strong>. La primera letra o carácter define si es un archivo o directorio, las siguientes 3 letras representan los permisos del usuario, las otras 3 representan los permisos del grupo y las ultimas 3 representan los permisos de todos los demás usuarios.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong>-</strong> Describe a un archivo.</li>
+                <li><strong>d</strong> Describe a un directorio.</li>
+                <li><strong>r</strong> Describe que un archivo o directorio se le esta permitido la lectura.</li>
+                <li><strong>w</strong> Describe que un archivo o directorio se le esta permitido la escritura.</li>
+                <li><strong>x</strong> Describe que un archivo o directorio se le esta permitido la lectura.</li>
+            </ul>
+
+            
         </section>
     </div>
 
