@@ -11,6 +11,7 @@
     <link rel="manifest" href="assets/manifest.json">
     <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="assets/index.css">
 </head>
 <body>
@@ -46,7 +47,7 @@
                 <li><strong>FTP (File Transfer Protocol):</strong> Puerto 21</li>
                 <li><strong>SSH (Secure Shell):</strong> Puerto 22</li>
                 <li><strong>HTTP (HyperText Transfer Protocol):</strong> Puerto 80</li>
-                <li><strong>SFTP (Secure File Transfer Protocol):</strong> Puerto 115</li>
+                <li><strong>SFTP (Secure File Transfer Protocol):</strong> <strike>Puerto 115</strike> SFTP usualmente usa el puerto 22 ya que internamente usa el comando "scp" que es para copiar archivos (descargar o subir) a través de SSH por lo que forzosamente SFTP tiene que usar el mismo puerto que SSH. Correción hecha por <a href="https://twitter.com/NachooGoomez" target="_blank">Ignacio Castillejo</a> :)</li>
                 <li><strong>HTTPS/SSL (Secure HyperText Transfer Protocol/Secure Sockets Layer):</strong> Puerto 443</li>
             </ul>
 
