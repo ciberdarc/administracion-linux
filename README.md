@@ -1,6 +1,6 @@
 # Guía del Curso de Administración de Servidores Linux
 
-Este repositorio contiene una sencilla guía alojada en GitHub Pages con el fin de usarla como recordatorio de algunos comandos que en ocasiones olvidamos. Puedes ingresar a la guía [aquí](https://joaquinaraujo.github.io/platzi_administracion-linux/).
+Este repositorio contiene una sencilla guía alojada en GitHub Pages con el fin de usarla como recordatorio de algunos comandos que en ocasiones olvidamos. Puedes ingresar a la guía [aquí](https://joaquinaraujo.github.io/administracion-linux/).
 
 ## ¿Algún error? ¿Faltó algún comando?
 
